@@ -6,6 +6,12 @@
 /out-tsc
 /bazel-out
 
+# environment variables
+**/.env
+**/environment.ts
+**/environment.development.ts
+**/environments
+
 # Node
 /node_modules
 npm-debug.log
