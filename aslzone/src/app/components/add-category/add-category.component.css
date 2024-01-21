@@ -1,0 +1,18 @@
+.form-header {
+  background-color: var(--lightbrown);
+  color: var(--white);
+}
+
+.btn-submit {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.btn-submit:hover {
+  background-color: var(--darkbrown);
+}
+
+.btn-submit:focus {
+  outline: none;
+  box-shadow: none;
+}

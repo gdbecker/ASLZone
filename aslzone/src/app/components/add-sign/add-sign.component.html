@@ -1,0 +1,84 @@
+<div class="card">
+  <div class="card-header form-header">
+    Add ASL Sign
+  </div>
+  <div class="card-body">
+    <form #signForm="ngForm" (ngSubmit)="onSubmit(signForm)">
+      <div class="form-group mb-3">
+        <label class="" for="category">Category</label>
+        <select 
+          class="custom-select form-control"
+          name="category"
+          #signCategory="ngModel"
+          [ngClass]="{ 'is-invalid':signCategory.errors && signCategory.touched }"
+          [(ngModel)]="sign.category.id"
+          required
+        >
+          <option *ngFor="let c of categories" value="{{ c.id }}">{{ c.name }}</option>
+        </select>
+        <div [hidden]="!signCategory.errors?.['required']" class="invalid-feedback">
+          Category is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="label">Label</label>
+        <input 
+          type="text"
+          class="form-control"
+          name="label"
+          #signLabel="ngModel"
+          [ngClass]="{ 'is-invalid':signLabel.errors && signLabel.touched }"
+          [(ngModel)]="sign.label"
+          required
+        >
+        <div [hidden]="!signLabel.errors?.['required']" class="invalid-feedback">
+          ASL label is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input 
+          type="text"
+          class="form-control"
+          name="description"
+          #signDescription="ngModel"
+          [ngClass]="{ 'is-invalid':signDescription.errors && signDescription.touched }"
+          [(ngModel)]="sign.description"
+          required
+          minlength="5"
+        >
+        <div [hidden]="!signDescription.errors?.['required']" class="invalid-feedback">
+          Sign description is required
+        </div>
+        <div [hidden]="!signDescription.errors?.['minlength']" class="invalid-feedback">
+          Must be at least 5 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="url">Image URL</label>
+        <input 
+          type="text"
+          class="form-control"
+          name="url"
+          #signURL="ngModel"
+          [ngClass]="{ 'is-invalid':signURL.errors && signURL.touched }"
+          [(ngModel)]="sign.url"
+          required
+          minlength="5"
+        >
+        <div [hidden]="!signURL.errors?.['required']" class="invalid-feedback">
+          Image URL is required
+        </div>
+        <div [hidden]="!signURL.errors?.['minlength']" class="invalid-feedback">
+          Must be at least 5 characters
+        </div>
+      </div>
+
+      <input type="submit" value="Submit" class="btn btn-block btn-submit">
+
+    </form>
+  </div>
+</div>

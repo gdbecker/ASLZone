@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header form-header">
+    Add Signs Category
+  </div>
+  <div class="card-body">
+    <form #categoryForm="ngForm" (ngSubmit)="onSubmit(categoryForm)">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input 
+          type="text"
+          class="form-control"
+          name="name"
+          #categoryName="ngModel"
+          [ngClass]="{ 'is-invalid':categoryName.errors && categoryName.touched }"
+          [(ngModel)]="category.name"
+          required
+          minlength="3"
+        >
+        <div [hidden]="!categoryName.errors?.['required']" class="invalid-feedback">
+          Category name is required
+        </div>
+        <div [hidden]="!categoryName.errors?.['minlength']" class="invalid-feedback">
+          Must be at least 3 characters
+        </div>
+      </div>
+
+      <input type="submit" value="Submit" class="btn btn-block btn-submit">
+
+    </form>
+  </div>
+</div>

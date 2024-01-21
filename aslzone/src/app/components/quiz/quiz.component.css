@@ -1,0 +1,42 @@
+.btn-submit {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.btn-submit:hover {
+  background-color: var(--darkbrown);
+}
+
+.btn-submit:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-restart {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.btn-restart:hover {
+  background-color: var(--darkbrown);
+}
+
+.btn-restart:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-user {
+  background-color: var(--darkbrown);
+  color: var(--white);
+}
+
+.btn-user:hover {
+  background-color: var(--teal);
+}
+
+.btn-user:focus {
+  outline: none;
+  box-shadow: none;
+}
+

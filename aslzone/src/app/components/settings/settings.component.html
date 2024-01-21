@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header form-header">
+    Edit Settings
+  </div>
+  <div class="card-body">
+    <form (submit)="onSubmit()">
+      <div class="form-group">
+        <label class="mr-2">Allow Registration</label>
+        <input type="checkbox" name="allowRegistration" [checked]="settings.allowRegistration" (change)="settings.allowRegistration = !settings.allowRegistration"> 
+      </div>
+      <input type="submit" value="Submit" class="btn btn-block btn-submit">
+    </form>
+  </div>
+</div>

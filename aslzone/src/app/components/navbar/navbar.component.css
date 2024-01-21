@@ -1,0 +1,12 @@
+nav {
+  background-color: var(--teal);
+}
+
+.dropdown-toggle {
+  background: transparent !important;
+}
+
+.dropdown-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}

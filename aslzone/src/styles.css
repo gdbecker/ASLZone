@@ -1,0 +1,44 @@
+/*
+COLOR PALETTE
+Teal: #47A992
+Dark Brown: #482121
+Light Brown: #7A3E3E
+Off-White: #EEEEEE
+White: #FFFFFF
+Black: #000000
+*/
+
+/* Fonts */
+@font-face {
+  font-family: 'Lora-Regular';
+  src: url("/assets/Lora/static/Lora-Regular.ttf") format("truetype");
+}
+
+:root {
+  --teal: #47A992;
+  --darkbrown: #482121;
+  --lightbrown: #7A3E3E;
+  --offwhite: #EEEEEE;
+  --white: #ffffff;
+  --black: #00000;
+}
+
+html { 
+  background-color: var(--offwhite);
+  height: 100vh;
+}
+
+body {
+  font-family: 'Lora-Regular', sans-serif !important;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+.active {
+  background-color: var(--teal) !important;
+}
+
+.dropdown-item:active {
+  background-color: var(--darkbrown) !important;
+}

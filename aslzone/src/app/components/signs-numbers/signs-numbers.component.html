@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <h1 class="mb-4">Numbers Signs</h1>
+  </div>
+  <div class="row justify-content-center">
+    <div class="card-columns mb-3 justify-content-center">
+      <div
+        *ngFor="let sign of signs"
+        class="card mb-4"
+        style="max-width: 18rem"
+      >
+        <div class="card-body">
+          <img
+            class="card-img-top mb-4"
+            src="{{ sign.url }}"
+            alt="Animal Sign {{ sign.label }}"
+          />
+          <h2 class="card-title text-center">{{ sign.label }}</h2>
+          <p class="card-text text-center">{{ sign.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

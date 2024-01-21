@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header form-header">
+    Manage ASL Signs
+  </div>
+  <div class="card-body">
+    <ul class="list-group" *ngIf="loaded && signs.length > 0">
+      <li *ngFor="let sign of signs" class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-left">
+          <h5>{{ sign.label }} | {{ sign.category.name }}</h5>
+        </div>
+        <div class="d-flex justify-content-right">
+          <button routerLink="/signs/edit/{{ sign.id }}" class="btn btn-secondary card-link">
+            <i class="fa fa-pencil"></i>
+          </button>
+          <button (click)="deleteSign(sign.id)" class="btn btn-danger card-link">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="loaded && signs.length === 0">
+      <h5>There are no ASL signs in the system</h5>
+    </div>
+  </div>
+</div>
+
+
+

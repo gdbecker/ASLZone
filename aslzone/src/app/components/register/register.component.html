@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card p-4">
+      <div class="card-body">
+        <h1 class="text-center pb-4 pt-3">
+          <span class="title pb-3">
+            Welcome to 
+            <br><i class="fa fa-asl-interpreting"></i> ASL Zone!
+          </span>
+        </h1>
+        <h2 class="text-center pb-2 pt-2">Register Here</h2>
+
+        <form (submit)="onSubmit()">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" [(ngModel)]="email" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" [(ngModel)]="password" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Register" class="btn btn-block btn-auth">
+          </div>
+        </form>
+      </div>
+    </div> 
+  </div>
+</div>

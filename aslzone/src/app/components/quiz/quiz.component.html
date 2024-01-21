@@ -1,0 +1,88 @@
+<div class="container">
+  
+  <div *ngIf="!inGame && !finishedGame" class="row justify-content-center">
+    <h1 class="mb-4">Quiz Mode!</h1>
+  </div>
+
+  <div *ngIf="!inGame && !finishedGame" class="card-body">
+    <form #activateForm="ngForm" (ngSubmit)="onActivateSubmit(activateForm)" class="form">
+      <div class="form-group mb-3">
+        <label class="text-center" for="category">Category</label>
+        <select 
+          class="custom-select form-control"
+          name="category"
+          #signCategory="ngModel"
+          [ngClass]="{ 'is-invalid':signCategory.errors && signCategory.touched }"
+          [(ngModel)]="selectedCategory"
+          required
+        >
+          <option *ngFor="let c of categories" value="{{ c.id }}">{{ c.name }}</option>
+        </select>
+        <div [hidden]="!signCategory.errors?.['required']" class="invalid-feedback">
+          Select a category to start the quiz!
+        </div>
+      </div>
+      <input type="submit" value="Let's Go" class="btn btn-block btn-submit">
+    </form>
+  </div>
+
+  <div *ngIf="inGame" class="card-body">
+    <form #gameForm="ngForm" (ngSubmit)="onGameSubmit(gameForm)" class="form">
+
+      <div class="row justify-content-center">
+        <div class="card-deck mb-3 d-grid justify-content-center">
+            <div class="card mb-4" style="min-width: 18rem; max-width: 18rem;">
+                <div class="card-body">
+                  <img class="card-img-top mb-4" src="{{ sign.url }}" alt="Alphabet Sign {{ sign.label }}" style="min-height: 8rem;" />
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="answer">Answer</label>
+        <input 
+          type="text"
+          class="form-control"
+          name="answer"
+          #answer="ngModel"
+          [ngClass]="{ 'is-invalid':answer.errors && answer.touched }"
+          [(ngModel)]="submittedAnswer"
+          required
+        >
+        <div [hidden]="!answer.errors?.['required']" class="invalid-feedback">
+          Type in your answer
+        </div>
+      </div>
+      
+      <input type="submit" value="Submit" class="btn btn-block btn-submit">
+      
+    </form>
+
+    <div class="d-flex justify-content-center my-4">
+      Sign {{ signIndex + 1 }} of {{ signs.length }}
+    </div>
+  </div>
+
+  <div *ngIf="finishedGame" class="card-body">
+    <div class="row justify-content-center">
+      <h1>Nice work!</h1>
+    </div>
+    <div class="row justify-content-center">
+      <h2>Your final score for category: {{ selectedCategory }}</h2>
+    </div>
+    <div class="row justify-content-center">
+      <h2>{{ currentScore }} / {{ signs.length }} ({{ currentScore/signs.length | percent }})</h2>
+    </div>
+    <div class="row justify-content-between">
+      <button (click)="restart()" class="btn btn-restart card-link">
+        <i class="fa fa-backward"></i> Take Another Quiz
+      </button>
+      <button routerLink="/user" class="btn btn-user card-link">
+        <i class="fa fa-user-circle"></i> See your scores
+      </button>
+    </div>
+    
+  </div>
+  
+</div>

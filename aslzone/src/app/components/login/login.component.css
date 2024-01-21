@@ -1,0 +1,17 @@
+.title {
+  color: var(--teal);
+}
+
+.btn-auth {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+.btn-auth:hover {
+  background-color: var(--darkbrown);
+}
+
+.btn-auth:focus {
+  outline: none;
+  box-shadow: none;
+}
