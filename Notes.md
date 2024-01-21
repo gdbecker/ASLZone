@@ -19,3 +19,7 @@
 - firebase
 - angularfire2 -> now it's: @angular/fire
 - @fontsource/lora
+
+### Hosting
+- had to use sudo on Mac for firebase setup commands
+- make sure to drag and drop files from within the "browser" folder inside of the dist folder from "ng build" into the base level of the dist or public folder (decide what to call the folder with static files when setting up firebase hosting)

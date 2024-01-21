@@ -29,7 +29,7 @@ ASL Zone allows anyone wanting to learn ASL to register and login into their acc
 
 ### Links
 
-- [Live Site URL]()
+- [Live Site URL](https://angularaslzone.web.app/login)
 
 ## My process
 

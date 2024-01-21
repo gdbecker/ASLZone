@@ -51,4 +51,8 @@ export class UserDetailsComponent implements OnInit {
       this.categories = new Set(category);
     });
   }
+
+  categoryHasScore(category: Category, scores: Score[]) {
+    return scores.some(score => score.category.id === category.id);
+  }
 }
