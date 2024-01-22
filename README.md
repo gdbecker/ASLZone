@@ -54,35 +54,35 @@ Here are a few code samples from this project:
 ```ts
 // Function in sign.service.ts to filter signs by a connecting Firebase collection
 getSignsByCategory(category: string): Observable<Sign[]> {
-    this.signs = this.signCollection.snapshotChanges().pipe(
-      map((changes) => {
-        return changes.map((action) => {
-          const data = action.payload.doc.data() as Sign;
-          data.id = action.payload.doc.id;
-          return data;
-        });
-      }),
-      map((signs) => {
-        return signs.filter((sign) => sign.category.id === category.toLowerCase());
-      }),
-    );
+  this.signs = this.signCollection.snapshotChanges().pipe(
+    map((changes) => {
+      return changes.map((action) => {
+        const data = action.payload.doc.data() as Sign;
+        data.id = action.payload.doc.id;
+        return data;
+      });
+    }),
+    map((signs) => {
+      return signs.filter((sign) => sign.category.id === category.toLowerCase());
+    }),
+  );
 
-    return this.signs;
-  }
+  return this.signs;
+}
 ```
 
 ```ts
 // Pulling only animals ASL signs from Firebase
 ngOnInit() {
-    this.signService.getSignsByCategory('Animals').subscribe(signs => {
-      signs.forEach(sign => {
-        this.categoryService.getCategory(sign.category.id).subscribe(category => {
-          sign.category = category;
-        });
+  this.signService.getSignsByCategory('Animals').subscribe(signs => {
+    signs.forEach(sign => {
+      this.categoryService.getCategory(sign.category.id).subscribe(category => {
+        sign.category = category;
       });
-      this.signs = signs;
     });
-  }
+    this.signs = signs;
+  });
+}
 ```
 
 ```html
