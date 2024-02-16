@@ -6,16 +6,18 @@ ASL Zone allows anyone wanting to learn ASL to register and login into their acc
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [Alphabet Signs Page](#alphabet-signs-page)
-  - [Quiz Page](#quiz-page)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
+- [ASL Zone Angular App](#asl-zone-angular-app)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Alphabet Signs Page](#alphabet-signs-page)
+    - [Quiz Page](#quiz-page)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
 ## Overview
 
@@ -40,6 +42,7 @@ ASL Zone allows anyone wanting to learn ASL to register and login into their acc
 - HTML5
 - CSS
 - Bootstrap
+- Firebase
 - Mobile-first workflow
 - [VS Code](https://code.visualstudio.com)
 
